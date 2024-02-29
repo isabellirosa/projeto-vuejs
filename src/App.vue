@@ -2,14 +2,15 @@
 <template>
   <button @click="incrementarContador">Incrementar</button>
   <button @click="decrementarContador">Decrementar</button>
-  <p>Valor do contador é: {{ contador }}</p>
+  <p >Valor do contador é: {{ contador }}</p>
+  <button @click="zerar">Zerar</button>
 </template>
 
 <style scoped>
 button {
   font-weight: bold;
 } 
-/*API de composição:*/
+/*API de opções:*/
 </style>
 
 <script>
@@ -23,8 +24,11 @@ export default {
     incrementarContador() {
       this.contador++
     },
-    decrementarContador() {
-      this.contador--
+    decrementarContador(){
+    if(this.contador>0)this.contador--
+    },
+    zerar(){
+    this.contador=0
     }
   },
   mounted() {
@@ -42,8 +46,11 @@ function incrementarContador() {
   contador.value++
 }
 function decrementarContador() {
-  contador.value--
+  if(contador.value>0)contador.value--
 }
+zerar(){
+    contador.value=0
+    }
 
 onMounted(() => {
   console.log(`O valor inicial do contador é ${contador.value}.`)
