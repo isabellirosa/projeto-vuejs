@@ -1,15 +1,25 @@
 
 <template>
-  <button @click="incrementarContador">Incrementar</button>
-  <button @click="decrementarContador">Decrementar</button>
-  <p >Valor do contador é: {{ contador }}</p>
+  <div>
+  <button @click="incrementarContador">+</button>
+  <p > {{ contador }}</p>
+  <button  @click="decrementarContador">-</button>
   <button @click="zerar">Zerar</button>
+  </div>
 </template>
 
 <style scoped>
 button {
-  font-weight: bold;
+  background-color: rgb(231, 230, 255);
+  border-radius: 8px;
+   border: 1px solid black;
+   margin: 5px;
 } 
+div{
+  display: flex; 
+  align-items: center;
+   justify-content: center;
+    }
 /*API de opções:*/
 </style>
 
